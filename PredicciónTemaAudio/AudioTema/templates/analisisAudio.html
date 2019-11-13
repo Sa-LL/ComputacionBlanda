@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+<style>
+    body {
+        background-image: url("{% static 'images/robot2.jpg' %}");
+        /* background-repeat: no-repeat; */
+    }
+    .margintop{
+        margin-top: 100px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<p class = "h1 text-center">Audio "{{ object.nombre }}"</p>
+<div class = "row">
+    <div class = "col col-md-8 offset-md-2">
+        <ul class="list-group margintop">
+            <li class="list-group-item"><p>Texto: {{ object.textoAudio }}</li>
+            <li class="list-group-item"><p>Tema: {{ object.tema }}</p></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block extrahead %}
+{% load static %}
+
+<style>
+    body {
+        background-image: url("{% static 'images/background2.jpg' %}");
+        /* background-repeat: no-repeat; */
+    }
+
+    .margen{
+        margin-bottom: 50px;
+    }
+    .padding-left{
+        padding-left: 150px;
+    }
+    .margen2{
+        margin-top: 10%;
+    }
+    .padear{
+        padding: 20px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<!-- <img src="{% static 'images/login2.jpg' %}" class="rounded float-right"  id = "imagen"> -->
+
+<div class="row align-items-center margen2">
+    <div class="col-md-4 offset-md-4">
+        <div class="card">
+            <form method="POST" enctype="multipart/form-data" class="padear">{% csrf_token %}
+
+                <div class="form-group margen">
+                        <h5 class = "margen">Escribe el nombre del audio</h5>
+    
+                        <input class = "form-control" type="text" name="nombre">
+                </div>
+
+                <div class="form-group margen">
+                    <h5 class = "margen">Sube el audio que deseas analizar</h5>
+
+                    <input type="file" name="audio">
+                </div>
+
+                <div class="form-group padding-left" id="boton">
+                    <input type="submit" class="btn btn-primary" value="Aceptar" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
